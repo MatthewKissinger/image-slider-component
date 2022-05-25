@@ -526,9 +526,165 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"ebWYT":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 // Main js file
-console.log('test');
-console.log('test-2');
+// TODO LIST
+// global variables
+// imported images
+var _cat1Jpg = require("../images/cat-1.jpg");
+var _cat1JpgDefault = parcelHelpers.interopDefault(_cat1Jpg);
+var _cat2Jpg = require("../images/cat-2.jpg");
+var _cat2JpgDefault = parcelHelpers.interopDefault(_cat2Jpg);
+var _cat3Jpg = require("../images/cat-3.jpg");
+var _cat3JpgDefault = parcelHelpers.interopDefault(_cat3Jpg);
+var _cat4Jpg = require("../images/cat-4.jpg");
+var _cat4JpgDefault = parcelHelpers.interopDefault(_cat4Jpg);
+// array of images
+const imagesFolder = [
+    _cat1JpgDefault.default,
+    _cat2JpgDefault.default,
+    _cat3JpgDefault.default,
+    _cat4JpgDefault.default
+];
+const imageIndex = 0;
+// svg icons for inline HTML
+const leftArrow = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>';
+const rightArrow = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
+// DOM Cache
+const body = document.querySelector('body');
+// first render call
+renderImageSlider();
+// event listeners
+const leftArrowIcon = document.querySelector('.left-arrow-div');
+leftArrowIcon.addEventListener('click', ()=>{
+    prevImage();
+});
+const rightArrowIcon = document.querySelector('.right-arrow-div');
+rightArrowIcon.addEventListener('click', ()=>{
+    nextImage();
+});
+// render functions
+function renderImageSlider() {
+    const imageSliderFrame = document.createElement('div');
+    imageSliderFrame.classList.add('image-slider-frame');
+    const leftArrowDiv = document.createElement('div');
+    leftArrowDiv.classList.add('left-arrow-div', 'flex-center');
+    leftArrowDiv.innerHTML = leftArrow;
+    const imageContainer = document.createElement('div');
+    imageContainer.classList.add('image-container');
+    const sliderImage = document.createElement('img');
+    sliderImage.classList.add('slider-img');
+    imageContainer.appendChild(sliderImage);
+    const rightArrowDiv = document.createElement('div');
+    rightArrowDiv.classList.add('right-arrow-div', 'flex-center');
+    rightArrowDiv.innerHTML = rightArrow;
+    const navDotContainer = document.createElement('div');
+    navDotContainer.classList.add('nav-dot-container');
+    imageSliderFrame.appendChild(leftArrowDiv);
+    imageSliderFrame.appendChild(imageContainer);
+    imageSliderFrame.appendChild(rightArrowDiv);
+    imageSliderFrame.appendChild(navDotContainer);
+    body.appendChild(imageSliderFrame);
+    // initial call to display first image
+    displayImage();
+    renderNavDots(imagesFolder);
+}
+function displayImage() {
+    const image = document.querySelector('.slider-img');
+    image.setAttribute('src', `${imagesFolder[imageIndex]}`);
+}
+function renderNavDots(array) {
+    const navDotContainer = document.querySelector('.nav-dot-container');
+    array.forEach((item)=>{
+        const navDot = document.createElement('div');
+        navDot.classList.add('nav-dot');
+        navDot.setAttribute('data-index', `${array.indexOf(item)}`);
+        if (parseInt(navDot.dataset.index, 10) === imageIndex) navDot.classList.add('filled');
+        navDotContainer.appendChild(navDot);
+    });
+}
+function nextImage() {
+    console.log('next image');
+}
+function prevImage() {
+    console.log('previous image');
+}
+
+},{"../images/cat-1.jpg":"bdyv3","../images/cat-2.jpg":"8iNjD","../images/cat-3.jpg":"1ZVPg","../images/cat-4.jpg":"20h9e","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bdyv3":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('g05j8') + "cat-1.bd73d9ae.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp|(chrome|moz)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp|(chrome|moz)-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp|(chrome|moz)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"8iNjD":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('g05j8') + "cat-2.7fc08e8f.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"1ZVPg":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('g05j8') + "cat-3.7bfd2758.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"20h9e":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('g05j8') + "cat-4.347c771b.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
 },{}]},["ljsGX","ebWYT"], "ebWYT", "parcelRequire0179")
 
