@@ -1,10 +1,10 @@
 {
-  "name": "parcel-template",
+  "name": "mk-image-slider",
   "version": "1.0.0",
   "description": "Project starter template using parcel bundler",
   "source": "src/index.html",
   "scripts": {
-    "start": "npx parcel src/index.html -p 3000 --open",
+    "start": "parcel src/index.html --open",
     "clean": "rm -rf dist/*",
     "build:parcel": "npx parcel build src/index.html",
     "build": "npm run clean && npm run build:parcel"
@@ -17,9 +17,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MatthewKissinger/parcel-template/issues"
+    "url": "https://github.com/MatthewKissinger/image-slider-component/issues"
   },
-  "homepage": "https://github.com/MatthewKissinger/parcel-template#readme",
+  "homepage": "https://github.com/MatthewKissinger/image-slider-component#readme",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.5.0",
     "eslint": "^8.16.0",
