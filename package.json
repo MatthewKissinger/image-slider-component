@@ -1,0 +1,31 @@
+{
+  "name": "parcel-template",
+  "version": "1.0.0",
+  "description": "Project starter template using parcel bundler",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "npx parcel src/index.html -p 3000 --open",
+    "clean": "rm -rf dist/*",
+    "build:parcel": "npx parcel build src/index.html",
+    "build": "npm run clean && npm run build:parcel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatthewKissinger/parcel-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatthewKissinger/parcel-template/issues"
+  },
+  "homepage": "https://github.com/MatthewKissinger/parcel-template#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.5.0",
+    "eslint": "^8.16.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "parcel": "^2.5.0",
+    "sass": "^1.52.1"
+  }
+}
