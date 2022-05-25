@@ -527,15 +527,9 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"ebWYT":[function(require,module,exports) {
 // Main js file
-const name = 'James';
-const person = {
-    first: `${name}`
-};
-const sayHelloLinting = (fName)=>{
-    console.log(`Hello linting, ${fName}`);
-};
-sayHelloLinting(person.first);
+console.log('test');
+console.log('test-2');
 
-},{}]},["ljsGX","ebWYT"], "ebWYT", "parcelRequire9b17")
+},{}]},["ljsGX","ebWYT"], "ebWYT", "parcelRequire0179")
 
 //# sourceMappingURL=index.739bf03c.js.map

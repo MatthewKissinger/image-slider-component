@@ -9,11 +9,47 @@ body {
     width: 100%;
 }
 
-h1 {
-    text-align: center;
-    color: green;
-    font-size: 3rem;
-    padding: 1rem;
-    margin: 0 auto;
-    width: 75%;
+.image-slider-frame {
+    position: relative;
+    height: 400px;
+    width: 600px;
+    border: 1px solid red;
+    margin: 2rem auto;
+
+    .image-container {
+        height: 75%;
+        width: 80%;
+        border: 1px solid blue;
+    }
+
+    .left-arrow, .right-arrow {
+        width: 3rem;
+        height: 3rem;
+        border: 1px solid green;
+    }
+
+    .nav-dot-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        position: absolute;
+        height: 10%;
+        width: 50%;
+        border: 1px solid purple;
+        bottom: 0;
+
+        .nav-dot {
+            height: 1rem;
+            width: 1rem;
+            border: 1px solid orange;
+            border-radius: 50%;
+        }
+    }
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
